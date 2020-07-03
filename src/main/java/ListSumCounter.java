@@ -11,7 +11,6 @@ public class ListSumCounter implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         return numbers.stream()
-                .mapToInt(numbers -> numbers)
-                .sum();
+                .reduce(0, Integer::sum);
     }
 }
